@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jellyfish">
+        <div class="body"></div>
+        <div class="tentacle tentacle1"></div>
+        <div class="tentacle tentacle2"></div>
+        <div class="tentacle tentacle3"></div>
+        <div class="tentacle tentacle4"></div>
+        <div class="tentacle tentacle5"></div>
+    </div>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.jellyfish {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    animation: moveJellyfish 5s ease-in-out infinite;
+}
+
+.body {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 0) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.tentacle {
+    position: absolute;
+    width: 3px;
+    height: 100px;
+    background: rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: moveTentacle 3s ease-in-out infinite, glowTentacle 1.5s ease-in-out infinite alternate;
+}
+
+.tentacle1 {
+    top: 100px;
+    left: 25px;
+    transform-origin: top center;
+    animation-delay: 0s, 0s;
+}
+
+.tentacle2 {
+    top: 100px;
+    left: 45px;
+    transform-origin: top center;
+    animation-delay: 0.3s, 0.3s;
+}
+
+.tentacle3 {
+    top: 100px;
+    left: 65px;
+    transform-origin: top center;
+    animation-delay: 0.6s, 0.6s;
+}
+
+.tentacle4 {
+    top: 100px;
+    left: 85px;
+    transform-origin: top center;
+    animation-delay: 0.9s, 0.9s;
+}
+
+.tentacle5 {
+    top: 100px;
+    left: 105px;
+    transform-origin: top center;
+    animation-delay: 1.2s, 1.2s;
+}
+
+@keyframes moveJellyfish {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 60px rgba(0, 255, 255, 0.5);
+    }
+}
+
+@keyframes moveTentacle {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    50% {
+        transform: rotate(30deg) translateY(20px);
+    }
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+}
+
+@keyframes glowTentacle {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+}
+
+    </style>
+</body>
+</html>
